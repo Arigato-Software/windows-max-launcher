@@ -1,0 +1,24 @@
+# Папки проекта
+backup/
+lib/
+
+# Стандартные файлы Lazarus/Delphi
+*.ppu
+*.o
+*.compiled
+*.or
+*.rsj
+*.lrs
+*.bak
+*.identcache
+*.local
+
+# Сборки
+*.exe
+*.dll
+*.so
+*.dylib
+
+# IDE настройки (опционально)
+*.lpi
+*.lps

@@ -1,0 +1,245 @@
+object FMain: TFMain
+  Left = 761
+  Height = 273
+  Top = 342
+  Width = 516
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'MAX лаунчер'
+  ClientHeight = 273
+  ClientWidth = 516
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDblClick = FormDblClick
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object Label2: TLabel
+    Left = 23
+    Height = 15
+    Top = 108
+    Width = 214
+    Caption = 'Использовать внешний буфер обмена'
+    Color = clBtnFace
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabeledEdit1: TLabeledEdit
+    Left = 8
+    Height = 23
+    Top = 24
+    Width = 416
+    EditLabel.Height = 15
+    EditLabel.Width = 416
+    EditLabel.Caption = 'Путь к эмулятору:'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+  end
+  object LabeledEdit2: TLabeledEdit
+    Left = 8
+    Height = 23
+    Top = 72
+    Width = 368
+    EditLabel.Height = 15
+    EditLabel.Width = 368
+    EditLabel.Caption = 'Общая папка эмулятора'
+    EditLabel.ParentColor = False
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 432
+    Height = 25
+    Top = 23
+    Width = 75
+    Caption = 'Обзор...'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 8
+    Height = 25
+    Top = 233
+    Width = 248
+    Caption = 'Запустить эмулятор'
+    OnClick = Button3Click
+    TabOrder = 8
+  end
+  object CheckBox1: TCheckBox
+    Left = 8
+    Height = 19
+    Hint = 'Разрешить копирование текста между ПК и эмулятором'
+    Top = 106
+    Width = 233
+    AutoSize = False
+    Color = clDefault
+    OnChange = CheckBox1Change
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+  end
+  object Button4: TButton
+    Left = 384
+    Height = 25
+    Top = 233
+    Width = 123
+    Caption = 'Выход'
+    OnClick = Button4Click
+    TabOrder = 9
+  end
+  object CheckBox2: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 200
+    Width = 256
+    Caption = 'Закрыть лаунчер при закрытии эмулятора'
+    Checked = True
+    State = cbChecked
+    TabOrder = 7
+  end
+  object Button5: TButton
+    Left = 385
+    Height = 25
+    Top = 71
+    Width = 123
+    Caption = 'Открыть папку'
+    OnClick = Button5Click
+    TabOrder = 3
+  end
+  object Label1: TLabel
+    Left = 488
+    Height = 13
+    Hint = 'Arigato Software, 2025-26'
+    Top = 1
+    Width = 20
+    Caption = 'v0.4'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -11
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object CheckBox3: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 168
+    Width = 334
+    Caption = 'Запустить MAX автоматически после загрузки планшета'
+    TabOrder = 6
+  end
+  object CheckBox4: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 136
+    Width = 363
+    Caption = 'Запустить эмулятор автоматически после открытия лаунчера'
+    TabOrder = 5
+  end
+  object OpenDialog1: TOpenDialog
+    Title = 'Выберите файл эмулятора (dnplayer.exe)'
+    DefaultExt = '.exe'
+    Filter = 'Файл эмулятора (dnplayer.exe)|dnplayer.exe|Все программы (*.exe)|*.exe|Все файлы (*.*)|*.*'
+    Left = 176
+    Top = 40
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = Timer1Timer
+    Left = 40
+    Top = 40
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = Timer2Timer
+    Left = 80
+    Top = 40
+  end
+  object Timer3: TTimer
+    Enabled = False
+    Interval = 300000
+    OnTimer = Timer3Timer
+    Left = 128
+    Top = 40
+  end
+  object Timer4: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = Timer4Timer
+    Left = 232
+    Top = 112
+  end
+  object Timer5: TTimer
+    Enabled = False
+    Interval = 200
+    OnTimer = Timer5Timer
+    Left = 272
+    Top = 216
+  end
+  object Timer6: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = Timer6Timer
+    Left = 326
+    Top = 216
+  end
+  object TrayIcon1: TTrayIcon
+    PopUpMenu = PopupMenu1
+    Hint = 'MAX лаунчер'
+    OnClick = TrayIcon1Click
+    Left = 288
+    Top = 104
+  end
+  object Timer7: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = Timer7Timer
+    Left = 344
+    Top = 104
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 288
+    Top = 24
+    object MenuItem1: TMenuItem
+      Caption = 'Показать'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Выход'
+      OnClick = MenuItem2Click
+    end
+  end
+  object Timer8: TTimer
+    Enabled = False
+    Interval = 3000
+    OnTimer = Timer8Timer
+    Left = 280
+    Top = 152
+  end
+  object Timer9: TTimer
+    Enabled = False
+    OnTimer = Timer9Timer
+    Left = 392
+    Top = 112
+  end
+  object Timer10: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer10Timer
+    Left = 448
+    Top = 112
+  end
+end
